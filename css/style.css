@@ -681,14 +681,21 @@ a[href*='tel'], a[href*='mailto'] {
 		max-width: 94%;
 	}
 }
-
 .leistungen-section {
     padding: 50px 0;
     background-color: #fff;
     text-align: center;
 }
 
-h2, h4 {
+h2.section-title {
+    color: #F4B419;
+}
+
+.leistungen-item .overlay h2 {
+    color: #F4B419;
+}
+
+h4 {
     margin: 0;
 }
 
