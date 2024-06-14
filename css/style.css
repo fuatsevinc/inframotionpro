@@ -11,7 +11,40 @@ button:focus {
 button::-moz-focus-inner {
 	border: 0;
 }
-
+.job-listing {
+	margin-top: 20px;
+  }
+  
+  .job-item {
+	margin-bottom: 15px;
+  }
+  
+  details {
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 5px;
+  }
+  
+  summary {
+	font-size: 1.25em;
+	font-weight: bold;
+	cursor: pointer;
+  }
+  
+  summary::marker {
+	color: #fbaf3f; /* You can adjust the color to match your design */
+  }
+  
+  ul {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+  }
+  
+  ul li {
+	margin-bottom: 5px;
+  }
+  
 *:focus {
 	outline: none;
 }
