@@ -1398,4 +1398,22 @@ document.getElementById("openPopup").addEventListener("click", function() {
   document.getElementById("closePopup").addEventListener("click", function() {
 	document.getElementById("popup").style.display = "none";
   });
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+	const elements = document.querySelectorAll('[data-caption-animate]');
+	
+	const observer = new IntersectionObserver((entries) => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting) {
+		  entry.target.classList.add('animated', entry.target.getAttribute('data-caption-animate'));
+		}
+	  });
+	}, { threshold: 0.1 });
+  
+	elements.forEach(element => {
+	  observer.observe(element);
+	});
+  });
   
