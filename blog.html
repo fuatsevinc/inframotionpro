@@ -158,6 +158,7 @@
 
 
 
+
       <!-- Page Footer-->
 
       <footer class="section footer-corporate context-dark">
@@ -222,6 +223,7 @@
                       <li><a href="jobs.html">Jobs</a></li>
                       <br>
                     </ul>
+
                   </div>
                 </div>
               </div>
@@ -250,6 +252,10 @@
                   </div>
                 </div>
               </div>
+
+
+
+
             </div>
           </div>
         </div>
@@ -263,7 +269,7 @@
                       <li><a class="icon fa fa-facebook" target="_blank"
                           href="https://www.facebook.com/profile.php?id=100091347528206"></a></li>
                       <li><a class="icon fa fa-twitter" target="_blank"
-                          href="https://x.com/InframotionGmbh"></a></li>
+                          href="https://twitter.com/GmbhInframotion"></a></li>
                       <li><a class="icon fa fa fa-linkedin" target="_blank"
                           href="https://www.linkedin.com/company/100840375/admin/feed/posts/"></a>
                       </li>
@@ -292,6 +298,36 @@
   <!-- Javascript-->
   <script src="js/core.min.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const items = document.querySelectorAll('.leistungen-item');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(entry.target.dataset.animation);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        items.forEach((item, index) => {
+            if (index % 2 === 0) {
+                item.dataset.animation = 'animate-left';
+                item.style.transform = 'translateX(-50px)';
+            } else {
+                item.dataset.animation = 'animate-right';
+                item.style.transform = 'translateX(50px)';
+            }
+            observer.observe(item);
+        });
+    });
+</script>
 </body>
 
 </html>
