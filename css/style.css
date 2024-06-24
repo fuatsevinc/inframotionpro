@@ -480,7 +480,33 @@ a[href*='tel'], a[href*='mailto'] {
 	border-width: 3px 0 3px 6px;
 	border-color: transparent transparent transparent #151515;
 }
-
+/* Custom icon styling */
+.custom-icon {
+	color: #fbaf3f;
+	font-size: 8em;
+	display: block;
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 767px) {
+	.custom-icon {
+	  font-size: 4em;
+	}
+  }
+  
+  /* Center the icons */
+  .d-flex {
+	display: flex;
+  }
+  
+  .justify-content-center {
+	justify-content: center;
+  }
+  
+  .align-items-center {
+	align-items: center;
+  }
+  
 .link-classic:hover span {
 	width: 40px;
 	opacity: 1;
