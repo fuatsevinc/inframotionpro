@@ -22,84 +22,98 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        body {
-          font-family: 'Mulish', sans-serif;
-          background-color: #fff;
-          color: #222;
-          margin: 0;
-          padding: 0;
-        }
-    
-        .section {
-          padding: 60px 0;
-        }
-    
-        .section-fluid {
-          width: 100%;
-        }
-    
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 15px;
-        }
-    
-        .row {
-          display: flex;
-          flex-wrap: wrap;
-          margin: 0 -15px;
-        }
-    
-        .col {
-          flex: 1;
-          padding: 0 15px;
-          margin-bottom: 30px;
-        }
-    
+      body {
+        font-family: 'Mulish', sans-serif;
+        background-color: #fff;
+        color: #222;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .section {
+        padding: 60px 0;
+      }
+  
+      .section-fluid {
+        width: 100%;
+      }
+  
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+  
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+      }
+  
+      .col {
+        flex: 1;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+  
+      .col-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+  
+      .text-center {
+        text-align: center;
+      }
+  
+      .bg-default {
+        background-color: #fff;
+      }
+  
+      .counter-classic-number {
+        font-size: 3em;
+        font-weight: bold;
+        color: #F4B419;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+      }
+  
+      .counter-classic-title {
+        font-size: 1em;
+        font-weight: normal;
+        color: #666;
+        margin-top: 10px;
+        text-transform: capitalize;
+      }
+  
+      h2, h3 {
+        font-size: 2em;
+        font-weight: bold;
+        color: #222;
+        text-transform: capitalize;
+      }
+  
+      .counter {
+        display: inline-block;
+        width: 100%;
+        font-size: 3em;
+        font-weight: bold;
+        color: #F4B419;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        text-transform: capitalize;
+      }
+      @media (max-width: 768px) {
         .col-3 {
-          flex: 0 0 25%;
-          max-width: 25%;
+          flex: 0 0 50%;
+          max-width: 50%;
         }
-    
-        .text-center {
-          text-align: center;
+      }
+  
+      @media (max-width: 480px) {
+        .col-3 {
+          flex: 0 0 100%;
+          max-width: 100%;
         }
-    
-        .bg-default {
-          background-color: #fff;
-        }
-    
-        .counter-classic-number {
-          font-size: 3em;
-          font-weight: bold;
-          color: #F4B419;
-          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-        }
-    
-        .counter-classic-title {
-          font-size: 1em;
-          font-weight: normal;
-          color: #666;
-          margin-top: 10px;
-          text-transform: lowercase;
-        }
-    
-        h2 {
-          font-size: 2em;
-          font-weight: bold;
-          color: #222;
-        }
-    
-        .counter {
-          display: inline-block;
-          width: 100%;
-          font-size: 3em;
-          font-weight: bold;
-          color: #F4B419;
-          text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-          text-transform: lowercase;
-        }
-      </style>
+      }
+  </style>
     <style>
         .ie-panel {
             display: none;
@@ -446,43 +460,40 @@
                 </div>
             </div>
         </section>
-
-        <!-- Counters -->
-        <section class="section section-fluid bg-default">
-            <div class="container">
-                <div class="text-center">
-                    <h3 class="animate__animated animate__fadeInDown">Fertige Projekte</h3><br><br>
-                   
-                </div>
-                <div class="row text-center">
-                    <div class="col col-3 animate__animated animate__fadeInUp">
-                        <div class="counter-classic">
-                            <div class="counter" data-count="237500">0</div>
-                            <h5 class="counter-classic-title">Glasfaserkabel</h5>
-                        </div>
-                    </div>
-                    <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                        <div class="counter-classic">
-                            <div class="counter" data-count="8700">0</div>
-                            <h5 class="counter-classic-title">Hausanschlüsse</h5>
-                        </div>
-                    </div>
-                    <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
-                        <div class="counter-classic">
-                            <div class="counter" data-count="26750">0</div>
-                            <h5 class="counter-classic-title">Kabelrohre</h5>
-                        </div>
-                    </div>
-                    <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
-                        <div class="counter-classic">
-                            <div class="counter" data-count="38400">0</div>
-                            <h5 class="counter-classic-title">Gehweg & Pflasterarbeiten</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+ <!-- Counters -->
+ <section class="section section-fluid bg-default">
+  <div class="container">
+      <div class="text-center">
+          <h3 class="animate__animated animate__fadeInDown">Fertige Projekte</h3><br><br>
+      </div>
+      <div class="row text-center">
+          <div class="col col-3 animate__animated animate__fadeInUp">
+              <div class="counter-classic">
+                  <div class="counter" data-count="237500">0</div>
+                  <h5 class="counter-classic-title">Glasfaserkabel</h5>
+              </div>
+          </div>
+          <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+              <div class="counter-classic">
+                  <div class="counter" data-count="8700">0</div>
+                  <h5 class="counter-classic-title">Hausanschlüsse</h5>
+              </div>
+          </div>
+          <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+              <div class="counter-classic">
+                  <div class="counter" data-count="26750">0</div>
+                  <h5 class="counter-classic-title">Kabelrohre</h5>
+              </div>
+          </div>
+          <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+              <div class="counter-classic">
+                  <div class="counter" data-count="38400">0</div>
+                  <h5 class="counter-classic-title">Gehweg & Pflasterarbeiten</h5>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
           <script>
