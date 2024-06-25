@@ -78,7 +78,43 @@
     .cookie-popup button.accept {
         background: #4CAF50;
     }
+
+    @media (max-width: 1200px) {
+        .cookie-popup {
+            width: 600px;
+            height: 600px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .cookie-popup {
+            width: 90%;
+            height: 90%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cookie-popup {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+
+        .cookie-popup .buttons {
+            flex-direction: column;
+        }
+
+        .cookie-popup button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .cookie-popup button:last-child {
+            margin-bottom: 0;
+        }
+    }
 </style>
+
 
 </head>
 
@@ -272,6 +308,7 @@
           localStorage.setItem('cookieSettings', JSON.stringify({ analytical, thirdParty }));
 
           document.getElementById('cookiePopup').style.display = 'none';
+          document.body.style.overflow = ''; // Popup kapandığında kaydırmayı geri getirir
       }
 
       window.onload = function () {
@@ -280,6 +317,7 @@
               if (settings.analytical) document.getElementById('analyticalCookies').checked = true;
               if (settings.thirdParty) document.getElementById('thirdPartyCookies').checked = true;
               document.getElementById('cookiePopup').style.display = 'none';
+              document.body.style.overflow = ''; // Popup kapandığında kaydırmayı geri getirir
           }
       }
   </script>
