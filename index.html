@@ -9,52 +9,72 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <!-- Stylesheets-->
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7CPoppins:400%7CTeko:300,400">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   <!-- Stylesheets-->
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7CPoppins:400%7CTeko:300,400">
+   <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/fonts.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="js/core.min.js"></script>
+   <script src="js/script.js"></script>
+   <style>
+     .ie-panel {
+       display: none;
+       background: #212121;
+       padding: 10px 0;
+       box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+       clear: both;
+       text-align: center;
+       position: relative;
+       z-index: 1;
+     }
+ 
+     html.ie-10 .ie-panel,
+     html.lt-ie-10 .ie-panel {
+       display: block;
+     }
+     body {
+       font-family: 'Mulish', sans-serif;
+       font-size: 17px;
+       line-height: 28.9px;
+       color: #222222;
+     }
+     h2, h3 {
+       font-family: 'Mulish', sans-serif;
+       font-weight: 700;
+       color: #222222;
+     }
+     h2 {
+       font-size: 36px;
+       line-height: 1.2;
+     }
+     h3 {
+       font-size: 28px;
+       line-height: 1.2;
+     }
+   </style>
+    <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/core.min.js"></script>
-  <script src="js/script.js"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
-    .ie-panel {
-      display: none;
-      background: #212121;
-      padding: 10px 0;
-      box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
-      clear: both;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    html.ie-10 .ie-panel,
-    html.lt-ie-10 .ie-panel {
-      display: block;
-    }
-
     body {
       font-family: 'Mulish', sans-serif;
       font-size: 17px;
       line-height: 28.9px;
       color: #222222;
     }
-
-    h2,
-    h3 {
+    h2, h3 {
       font-family: 'Mulish', sans-serif;
       font-weight: 700;
       color: #222222;
     }
-
     h2 {
       font-size: 36px;
       line-height: 1.2;
     }
-
     h3 {
       font-size: 28px;
       line-height: 1.2;
@@ -64,7 +84,16 @@
 </head>
 
 <body>
-
+  <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+  <div class="preloader">
+    <div class="preloader-body">
+      <div class="cssload-container">
+        <div class="cssload-speeding-wheel"></div>
+      </div>
+      <p>Loading...</p>
+    </div>
+  </div>
+  <div class="page">
     <!-- Page Header-->
     <header class="section page-header">
       <!-- RD Navbar-->
@@ -124,6 +153,7 @@
         </nav>
       </div>
     </header>
+
     <!-- Swiper-->
     <section class="section swiper-container swiper-slider swiper-slider-corporate swiper-pagination-style-2" data-loop="true" data-autoplay="5000" data-simulate-touch="true" data-nav="false" data-direction="vertical">
       <div class="swiper-wrapper text-left">
@@ -136,10 +166,10 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-10">
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">WIR BAUEN DIE NETZ</h3>
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">INFRASTRUKTUR</h3>
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">DER ZUKUNFT</h3>
-                  <h3 class="oh font-weight-light animate__animated" data-animation="animate__slideInUp" data-caption-delay="100">
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">WIR BAUEN DIE NETZ</h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">INFRASTRUKTUR</h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">DER ZUKUNFT</h3>
+                  <h3 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100">
                     <span>von der Planung</span><span class="font-weight-bold"> bis zur Fertigstellung</span>
                   </h3>
                 </div>
@@ -152,9 +182,9 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-10">
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">ZUKUNFTSFÄHIGE</h3>
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">BREITBANDNETZE</h3>
-                  <h4 class="oh font-weight-light animate__animated" data-animation="animate__slideInUp" data-caption-delay="100"><span>alles aus</span><span class="font-weight-bold"> einer Hand</span></h4>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">ZUKUNFTSFÄHIGE</h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">BREITBANDNETZE</h3>
+                  <h4 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>alles aus</span><span class="font-weight-bold"> einer Hand</span></h4>
                 </div>
               </div>
             </div>
@@ -165,10 +195,10 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-10">
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">E MOBILITÄT</h3>
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">DER WEG IN DIE</h3>
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">"GRÜNE ZUKUNFT"</h3>
-                  <h3 class="oh font-weight-light animate__animated" data-animation="animate__slideInUp" data-caption-delay="100"><span>wir sind</span><span class="font-weight-bold"> auch dabei</span></h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">E MOBILITÄT</h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">DER WEG IN DIE</h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">"GRÜNE ZUKUNFT"</h3>
+                  <h3 class="oh font-weight-light" data-caption-animate="slideInUp" data-caption-delay="100"><span>wir sind</span><span class="font-weight-bold"> auch dabei</span></h3>
                 </div>
               </div>
             </div>
@@ -179,8 +209,8 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-10">
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">WIR BAUEN MIT</h3>
-                  <h3 class="text-uppercase animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">HERZ UND VERSTAND</h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">WIR BAUEN MIT</h3>
+                  <h3 class="text-uppercase" data-caption-animate="fadeInRight" data-caption-delay="0">HERZ UND VERSTAND</h3>
                 </div>
               </div>
             </div>
@@ -191,82 +221,99 @@
       <div class="swiper-pagination"></div>
     </section>
     <br>
-    <!-- Discover New Horizons-->
-    <section class="section section-sm section-first bg-default text-md-left">
-      <div class="container">
-        <center>
-          <h2 class="animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">Willkommen bei inframotion GmbH</h2>
-        </center>
-        <p class="animate__animated" data-animation="animate__slideInUp" data-caption-delay="100">Die inframotion GmbH ist Ihr Generalunternehmer für bundesweite Netz-Infrastruktur Projekte. Als Partner von Energieversorgern, Netzprovidern, Industrieunternehmen und öffentlichen Auftraggebern bieten wir umfassende Turn-Key- Dienstleistungen an.</p>
-        <p class="animate__animated" data-animation="animate__slideInUp" data-caption-delay="200">Wir planen Ihr Projekt mittels modernster Technik, zuverlässig im vereinbarten Zeit- und Kostenrahmen und setzen dieses auch auf Ihren Wunsch hin schlüsselfertig um.</p>
-      </div>
-    </section>
 
-    <!-- Why choose us-->
-    <section class="section section-sm section-first bg-default text-md-left">
-      <div class="container">
-        <div class="row row-50 justify-content-center align-items-xl-center">
-          <div class="col-md-10 col-lg-5 col-xl-6">
-            <img src="images/infraaltigen.jpg" alt="Zukunftsfähige Breitbandnetze" width="640" height="640" class="img-fluid animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">
-          </div>
-          <div class="col-md-10 col-lg-7 col-xl-6">
-            <h3 class="text-spacing-25 font-weight-normal title-opacity-3 animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">Zukunftsfähige Breitbandnetze</h3>
-            <!-- Bootstrap tabs-->
-            <div class="tabs-custom tabs-horizontal tabs-line" id="tabs-4">
-              <!-- Tab panes-->
-              <div class="tab-content">
-                <div class="tab-pane fade show active" id="tabs-4-1">
-                  <p class="animate__animated" data-animation="animate__slideInUp" data-caption-delay="100">Als Generalunternehmer erstellt Ihnen die inframotion GmbH zukunftsfähige Breitbandnetz.</p>
-                  <p class="animate__animated" data-animation="animate__slideInUp" data-caption-delay="200">Beginnend bei der gemeinsamen Projektplanung, führen wir den Auftrag im besprochenen Zeitrahmen mit einem hochqualifizierten Team, unter Einhaltung des Kostenbudgets zuverlässig durch. Sie erhalten Ihr Projekt nach Abschluss, auf Wunsch schlüsselfertig und dokumentiert zurück.</p>
-                  <p class="animate__animated" data-animation="animate__slideInUp" data-caption-delay="300">Für die Umsetzung nutzen wir die gesamte Bandbreite konventioneller und alternativer Tiefbautechniken, sowie modernstes Equipment.</p>
-                </div>
-              </div>
+    
+  <!-- Discover New Horizons-->
+  <section class="section section-sm section-first bg-default text-md-left">
+    <div class="container">
+      <center>
+        <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0">Willkommen bei inframotion GmbH</h2>
+      </center>
+      <p class="animate__animated animate__slideInUp" data-caption-delay="100">Die inframotion GmbH ist Ihr Generalunternehmer für bundesweite Netz-Infrastruktur Projekte. Als Partner von Energieversorgern, Netzprovidern, Industrieunternehmen und öffentlichen Auftraggebern bieten wir umfassende Turn-Key- Dienstleistungen an.</p>
+      <p class="animate__animated animate__slideInUp" data-caption-delay="200">Wir planen Ihr Projekt mittels modernster Technik, zuverlässig im vereinbarten Zeit- und Kostenrahmen und setzen dieses auch auf Ihren Wunsch hin schlüsselfertig um.</p>
+    </div>
+  </section>
+
+  <!-- JavaScript for animations -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('[data-caption-delay]').each(function() {
+        var $this = $(this);
+        var delay = $this.data('caption-delay');
+        setTimeout(function() {
+          $this.addClass('animate__animated ' + $this.data('animation'));
+        }, delay);
+      });
+    });
+  </script>
+
+<!-- Why choose us-->
+<section class="section section-sm section-first bg-default text-md-left">
+  <div class="container">
+    <div class="row row-50 justify-content-center align-items-xl-center">
+      <div class="col-md-10 col-lg-5 col-xl-6">
+        <img src="images/infraaltigen.jpg" alt="Zukunftsfähige Breitbandnetze" width="640" height="640" class="img-fluid" data-caption-animate="fadeInRight" data-caption-delay="0">
+      </div>
+      <div class="col-md-10 col-lg-7 col-xl-6">
+        <h3 class="animate__animated animate__fadeInRight" data-caption-delay="0">Zukunftsfähige Breitbandnetze</h3>
+        <!-- Bootstrap tabs-->
+        <div class="tabs-custom tabs-horizontal tabs-line" id="tabs-4">
+          <!-- Tab panes-->
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tabs-4-1">
+              <p class="animate__animated animate__slideInUp" data-caption-delay="100">Als Generalunternehmer erstellt Ihnen die inframotion GmbH zukunftsfähige Breitbandnetz.</p>
+              <p class="animate__animated animate__slideInUp" data-caption-delay="100">Beginnend bei der gemeinsamen Projektplanung, führen wir den Auftrag im besprochenen Zeitrahmen mit einem hochqualifizierten Team, unter Einhaltung des Kostenbudgets zuverlässig durch. Sie erhalten Ihr Projekt nach Abschluss, auf Wunsch schlüsselfertig und dokumentiert zurück.</p>
+              <p class="animate__animated animate__slideInUp" data-caption-delay="100">Für die Umsetzung nutzen wir die gesamte Bandbreite konventioneller und alternativer Tiefbautechniken, sowie modernstes Equipment.</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="leistungen-section">
+
+    <section class="leistungen-section animate__animated animate__fadeInRight">
       <div class="container">
-        <h2 class="section-title animate__animated" data-animation="animate__fadeInRight" data-caption-delay="0">LEISTUNGEN</h2>
+        <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0" style="color: #F4B419;">LEISTUNGEN</h2>
         <div class="col">
-          <div class="p-3 bg-light text-md-right animate__animated" data-animation="animate__fadeInRight" data-caption-delay="100">
-            <h4>Alles aus einer Hand</h4>
+          <div class="p-3 bg-light text-md-right">
+            <h4 style="color: #F4B419  class="animate__animated animate__fadeInRight" data-caption-delay="0">Alles aus einer Hand</h4>
           </div>
         </div>
         <div class="leistungen-grid">
-          <div class="leistungen-item animate__animated" style="background-image: url('images/ofis.jpg');" data-animation="animate__fadeIn" data-caption-delay="200">
+          <div class="leistungen-item" style="background-image: url('images/ofis.jpg');">
             <div class="overlay">
               <h2>Projektierung und Planung</h2>
               <p>Jedem erfolgreichen Projekt liegt eine sorgfältige und realistische Planung zu Grunde. Auf Wunsch erstellen wir diese für Sie und begleiten im Anschluss die Ausführung.</p>
             </div>
           </div>
-          <div class="leistungen-item animate__animated" style="background-image: url('images/inframotion_tiefbau.jpg');" data-animation="animate__fadeIn" data-caption-delay="300">
+          <div class="leistungen-item" style="background-image: url('images/inframotion_tiefbau.jpg');">
             <div class="overlay">
               <h2>Tiefbau</h2>
               <p>Für die Umsetzung nutzen wir die gesamte Bandbreite konventioneller, alternativer Tiefbautechniken und verwenden modernstes Equipment.</p>
             </div>
           </div>
-          <div class="leistungen-item animate__animated" style="background-image: url('images/inframotion_baumontage.jpg');" data-animation="animate__fadeIn" data-caption-delay="400">
+          <div class="leistungen-item" style="background-image: url('images/inframotion_baumontage.jpg');">
             <div class="overlay">
               <h2>Montage</h2>
               <p>Wir bieten Ihnen das gesamte Spektrum der Glasfaser- und Elektromontage über alle Netzebenen an.</p>
             </div>
           </div>
-          <div class="leistungen-item animate__animated" style="background-image: url('images/ofis2.jpg');" data-animation="animate__fadeIn" data-caption-delay="500">
+          <div class="leistungen-item" style="background-image: url('images/ofis2.jpg');">
             <div class="overlay">
               <h2>Dokumentation</h2>
               <p>Wir betreuen unsere Auftraggeber allumfassend, von der Projektierung bis hin zur Bauausführung und Dokumentation.</p>
             </div>
           </div>
-          <div class="leistungen-item animate__animated" style="background-image: url('images/inframotion_eteknik.jpg');" data-animation="animate__fadeIn" data-caption-delay="600">
+          <div class="leistungen-item" style="background-image: url('images/inframotion_eteknik.jpg');">
             <div class="overlay">
               <h2>e-Technik</h2>
               <p>Wir sind Ihr Partner für innovative Lösungen in der Elektrotechnik.</p>
             </div>
           </div>
-          <div class="leistungen-item animate__animated" style="background-image: url('images/inframotion_Sauger.jpg');" data-animation="animate__fadeIn" data-caption-delay="700">
+          <div class="leistungen-item" style="background-image: url('images/inframotion_Sauger.jpg');">
             <div class="overlay">
               <h2>Saugbagger</h2>
               <p>Wir arbeiten mit Saugbaggern, die moderne Techniken einsetzen, um die Umwelt zu schützen und Bäume zu erhalten. Unsere Methoden minimieren den Eingriff in die Natur und sorgen dafür, dass Ihr Projekt nicht nur effizient, sondern auch umweltfreundlich umgesetzt wird.</p>
@@ -278,10 +325,10 @@
 
     <!-- Section Subscribe-->
     <section class="section bg-default text-center offset-top-50">
-      <div class="parallax-container" data-parallax-img="images/Saug-Slide-1.jpg">
+      <div class="parallax-container" data-parallax-img="images/inframotion_baumontage.jpg">
         <div class="parallax-content section-xl section-inset-custom-1 context-dark bg-overlay-2-21">
           <div class="container">
-            <h2 class="heading-2 oh font-weight-normal wow slideInDown"><span class="d-block font-weight-semi-bold">Wir gestalten die Zukunft</span><span class="d-block font-weight-light">mit Glasfasernetzen</span></h2>
+            <h2  class="heading-2 oh font-weight-normal wow slideInDown"><span class="d-block font-weight-semi-bold">Wir gestalten die Zukunft</span><span class="d-block font-weight-light">mit Glasfasernetzen</span></h2>
           </div>
         </div>
       </div>
@@ -396,20 +443,39 @@
   </div>
   <!-- Global Mailform Output-->
   <div class="snackbars" id="form-output-global"></div>
-
-  <!-- JavaScript for animations -->
+  <!-- Javascript-->
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
   <script>
-    $(document).ready(function() {
-      $('[data-caption-delay]').each(function() {
-        var $this = $(this);
-        var delay = $this.data('caption-delay');
-        setTimeout(function() {
-          $this.addClass('animate__animated ' + $this.data('animation'));
-        }, delay);
+    document.addEventListener('DOMContentLoaded', function () {
+      const items = document.querySelectorAll('.leistungen-item');
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(entry.target.dataset.animation);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      items.forEach((item, index) => {
+        if (index % 2 === 0) {
+          item.dataset.animation = 'animate-left';
+          item.style.transform = 'translateX(-50px)';
+        } else {
+          item.dataset.animation = 'animate-right';
+          item.style.transform = 'translateX(50px)';
+        }
+        observer.observe(item);
       });
     });
-  </script>
-
+  </script
 </body>
 
 </html>
