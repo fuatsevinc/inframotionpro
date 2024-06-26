@@ -25,7 +25,6 @@
         font-family: 'Mulish', sans-serif;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* Popup görünürken sayfa kaydırmasını engeller */
     }
 
     .cookie-popup {
@@ -112,6 +111,23 @@
         .cookie-popup button:last-child {
             margin-bottom: 0;
         }
+    }
+
+    #cookiePopupOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    #cookiePopupOverlay.hidden {
+        display: none;
     }
 </style>
 
@@ -269,28 +285,29 @@
         </div>
       </div>
     </section>
-
-    <div class="cookie-popup" id="cookiePopup">
-      <h2>Cookie-Einstellungen</h2>
-      <p>Diese Webseite verwendet Cookies, um Besuchern ein optimales Nutzererlebnis zu bieten. Bestimmte Inhalte von Drittanbietern werden nur angezeigt, wenn die entsprechende Option aktiviert ist. Die Datenverarbeitung kann dann auch in einem Drittland erfolgen. Weitere Informationen hierzu in der Datenschutzerklärung.</p>
-      <label>
-          <input type="checkbox" id="necessaryCookies" checked disabled>
-          Technisch notwendige
-      </label>
-      <p>Diese Cookies sind zum Betrieb der Webseite notwendig, z.B. zum Schutz vor Hackerangriffen und zur Gewährleistung eines konsistenten und der Nachfrage angepassten Erscheinungsbilds der Seite.</p>
-      <label>
-          <input type="checkbox" id="analyticalCookies">
-          Analytische
-      </label>
-      <p>Diese Cookies werden verwendet, um das Nutzererlebnis weiter zu optimieren. Hierunter fallen auch Statistiken, die dem Webseitenbetreiber von Drittanbietern zur Verfügung gestellt werden, sowie die Ausspielung von personalisierter Werbung durch die Nachverfolgung der Nutzeraktivität über verschiedene Webseiten.</p>
-      <label>
-          <input type="checkbox" id="thirdPartyCookies">
-          Drittanbieter-Inhalte
-      </label>
-      <p>Diese Webseite bietet möglicherweise Inhalte oder Funktionalitäten an, die von Drittanbietern eigenverantwortlich zur Verfügung gestellt werden. Diese Drittanbieter können eigene Cookies setzen, z.B. um die Nutzeraktivität zu verfolgen oder ihre Angebote zu personalisieren und zu optimieren.</p>
-      <div class="buttons">
-          <button class="accept" onclick="acceptCookies()">Alle akzeptieren</button>
-          <button onclick="saveSettings()">Speichern</button>
+    <div id="cookiePopupOverlay">
+      <div class="cookie-popup" id="cookiePopup">
+          <h2>Cookie-Einstellungen</h2>
+          <p>Diese Webseite verwendet Cookies, um Besuchern ein optimales Nutzererlebnis zu bieten. Bestimmte Inhalte von Drittanbietern werden nur angezeigt, wenn die entsprechende Option aktiviert ist. Die Datenverarbeitung kann dann auch in einem Drittland erfolgen. Weitere Informationen hierzu in der Datenschutzerklärung.</p>
+          <label>
+              <input type="checkbox" id="necessaryCookies" checked disabled>
+              Technisch notwendige
+          </label>
+          <p>Diese Cookies sind zum Betrieb der Webseite notwendig, z.B. zum Schutz vor Hackerangriffen und zur Gewährleistung eines konsistenten und der Nachfrage angepassten Erscheinungsbilds der Seite.</p>
+          <label>
+              <input type="checkbox" id="analyticalCookies">
+              Analytische
+          </label>
+          <p>Diese Cookies werden verwendet, um das Nutzererlebnis weiter zu optimieren. Hierunter fallen auch Statistiken, die dem Webseitenbetreiber von Drittanbietern zur Verfügung gestellt werden, sowie die Ausspielung von personalisierter Werbung durch die Nachverfolgung der Nutzeraktivität über verschiedene Webseiten.</p>
+          <label>
+              <input type="checkbox" id="thirdPartyCookies">
+              Drittanbieter-Inhalte
+          </label>
+          <p>Diese Webseite bietet möglicherweise Inhalte oder Funktionalitäten an, die von Drittanbietern eigenverantwortlich zur Verfügung gestellt werden. Diese Drittanbieter können eigene Cookies setzen, z.B. um die Nutzeraktivität zu verfolgen oder ihre Angebote zu personalisieren und zu optimieren.</p>
+          <div class="buttons">
+              <button class="accept" onclick="acceptCookies()">Alle akzeptieren</button>
+              <button onclick="saveSettings()">Speichern</button>
+          </div>
       </div>
   </div>
 
@@ -307,32 +324,30 @@
 
           localStorage.setItem('cookieSettings', JSON.stringify({ analytical, thirdParty }));
 
-          document.getElementById('cookiePopup').style.display = 'none';
-          document.body.style.overflow = ''; // Popup kapandığında kaydırmayı geri getirir
+          document.getElementById('cookiePopupOverlay').classList.add('hidden');
+          document.body.style.overflow = 'auto'; // Popup kapandığında kaydırmayı geri getirir
       }
 
       window.onload = function () {
-          const settings = JSON.parse(localStorage.getItem('cookieSettings'));
-          if (settings) {
-              if (settings.analytical) document.getElementById('analyticalCookies').checked = true;
-              if (settings.thirdParty) document.getElementById('thirdPartyCookies').checked = true;
-              document.getElementById('cookiePopup').style.display = 'none';
-              document.body.style.overflow = ''; // Popup kapandığında kaydırmayı geri getirir
-          }
+          // Popup'ı her sayfa yüklemesinde gösterir
+          document.getElementById('cookiePopupOverlay').classList.remove('hidden');
+          document.body.style.overflow = 'hidden'; // Popup açıkken kaydırmayı engeller
       }
   </script>
-    <!-- JavaScript for animations -->
-    <script>
+
+  <!-- JavaScript for animations -->
+  <script>
       $(document).ready(function() {
-        $('[data-caption-delay]').each(function() {
-          var $this = $(this);
-          var delay = $this.data('caption-delay');
-          setTimeout(function() {
-            $this.addClass('animate__animated ' + $this.data('animation'));
-          }, delay);
-        });
+          $('[data-caption-delay]').each(function() {
+              var $this = $(this);
+              var delay = $this.data('caption-delay');
+              setTimeout(function() {
+                  $this.addClass('animate__animated ' + $this.data('animation'));
+              }, delay);
+          });
       });
-    </script>
+  </script>
+    
 
     <!-- Why choose us-->
     <section class="section section-sm section-first bg-default text-md-left">
