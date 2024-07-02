@@ -84,6 +84,20 @@
       summary::-webkit-details-marker {
         color: #f4b419;
       }
+      .ie-panel {
+        display: none;
+        background: #ffffff;
+        padding: 10px 0;
+        box-shadow: 3px 3px 5px 0 rgba(255, 255, 255, 0.3);
+        clear: both;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      html.ie-10 .ie-panel,
+      html.lt-ie-10 .ie-panel {
+        display: block;
+      }
     </style>
   
   </head>
@@ -289,7 +303,7 @@
     <p>Wir kommunizieren viel und finden die besten Lösungen für unsere Kunden gemeinsam. In Zukunft hoffentlich mit dir!</p>
     <h4>Wie wir arbeiten?</h4>
     <p>Im täglichen Miteinander leben und lieben wir flache Hierarchien und pflegen eine offene Unternehmenskultur. Unsere Mitarbeiterinnen und Mitarbeiter besuchen regelmäßig Schulungen und Trainings, damit wir auch in Zukunft mit Lichtgeschwindigkeit dabei sind.</p>
-    <h4>Bewirb dich jetzt!</h4>
+    <a href="kontakt.html"><h4 style="color: #f4b419;">Bewirb dich jetzt!</h4></a>
     <p>Wir haben Dein Interesse geweckt, aber Dir brennen noch Fragen auf der Seele? Du möchtest mehr erfahren? Kein Problem! Gerne beantworten wir Dir alle wichtigen Fragen.</p>
   </div>
 </section>
