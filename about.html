@@ -25,126 +25,145 @@
     <link rel="canonical" href="https://www.inframotion.de/saugbagger.html">
     <style>
         body {
-            font-family: 'Mulish', sans-serif;
-            background-color: #fff;
-            color: #222;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: 'Mulish', sans-serif;
+    background-color: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
 
-        .section {
-            padding: 60px 0;
-        }
+.section {
+    padding: 60px 0;
+}
 
-        .section-fluid {
-            width: 100%;
-        }
+.section-fluid {
+    width: 100%;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-        }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
 
-        .col {
-            flex: 1;
-            padding: 0 15px;
-            margin-bottom: 30px;
-            box-sizing: border-box;
-        }
+.col {
+    flex: 1;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+}
 
-        .col-3 {
-            flex: 0 0 25%;
-            max-width: 25%;
-            box-sizing: border-box;
-        }
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+}
 
-        .text-center {
-            text-align: center;
-        }
+.text-center {
+    text-align: center;
+}
 
-        .bg-default {
-            background-color: #fff;
-        }
+.bg-default {
+    background-color: #fff;
+}
 
-        .counter-classic-number {
-            font-size: 3em;
-            font-weight: 500; 
-            color: #F4B41A;
-            text-shadow: 4px 4px 14px rgba(0, 0, 0, 0.7);
-        }
+.custom-counter-number {
+    font-size: 3em;
+    font-weight: 500; 
+    color: #F4B41A;
+    text-shadow: 4px 4px 14px rgba(0, 0, 0, 0.7);
+}
 
-        .counter-classic-title {
-            font-size: 1em;
-            font-weight: normal;
-            color: #676767;
-            margin-top: 10px;
-            text-transform: capitalize;
-        }
+.custom-counter-title {
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #676767;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
 
-        h2, h3 {
-            font-size: 2em;
-            font-weight: bold;
-            color: #222;
-            text-transform: capitalize;
-        }
+h2, h3 {
+    font-size: 2em;
+    color: #222;
+    text-transform: capitalize;
+}
 
-        .counter-container {
-            display: flex;
-            align-items: baseline; 
-            justify-content: center;
-        }
+.custom-counter-container {
+    display: flex;
+    align-items: baseline; 
+    justify-content: center;
+}
 
-        .counter {
-            font-size: 4em;
-            font-weight: 400; 
-            color: #F4B41A; 
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); 
-        }
+.custom-counter {
+    font-size: 5em;
+    font-weight: 500; 
+    color: #F4B41A; 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); 
+}
 
-        .unit {
-            font-size: 0.5em; 
-            vertical-align: middle; 
-            color: #F4B41A;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-            margin-left: 0.1em; 
-        }
+.custom-unit {
+    font-size: 4em; 
+    vertical-align: baseline; 
+    color: #F4B41A;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    margin-left: 0.1em; 
+}
 
-        @media (max-width: 768px) {
-            .col-3 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
+@media (max-width: 768px) {
+    .col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 
-            .counter {
-                font-size: 3em;
-            }
+    .custom-counter {
+        font-size: 3em;
+    }
 
-            .unit {
-                font-size: 0.6em; 
-            }
-        }
+    .custom-unit {
+        font-size: 2em; 
+    }
+}
 
-        @media (max-width: 480px) {
-            .col-3 {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
+@media (max-width: 480px) {
+    .col-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 
-            .counter {
-                font-size: 2.5em;
-            }
+    .custom-counter {
+        font-size: 3em;
+    }
 
-            .unit {
-                font-size: 0.7em; 
-            }
-        }
+    .custom-unit {
+        font-size: 2em; 
+    }
+}
+
+.project-titles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-titles h2 {
+    flex: 1 1 100%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .project-titles h2 {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+}
+
     </style>
 </head>
 
@@ -400,44 +419,53 @@
             </div>
         </section>
         
- 
-  <!-- Counters -->
-  <section class="section section-fluid bg-default">
+        
+        
+   <!-- Counters -->
+<section class="section section-fluid bg-default">
     <div class="container">
         <div class="text-center">
             <h3 class="animate__animated animate__fadeInDown">Fertige Projekte</h3><br><br>
+            <div class="project-titles">
+                <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0">Bad-Neuenahr</h2>
+                <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0">Bremen</h2>
+                <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0">Steinfurt</h2>
+                <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0">Hamburg</h2>
+                <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0">Elmshorn</h2>
+                <h2 class="animate__animated animate__fadeInRight" data-caption-delay="0">Frechen</h2>
+            </div>
         </div>
         <div class="row text-center">
             <div class="col col-3 animate__animated animate__fadeInUp">
                 <div class="counter-classic">
-                    <div class="counter-container">
-                        <span class="counter" data-count="237500">0</span><span class="unit">m</span>
+                    <div class="custom-counter-container">
+                        <span class="custom-counter" data-count="237500">0</span><span class="custom-unit">m</span>
                     </div>
-                    <h5 class="counter-classic-title">Glasfaserkabel</h5>
+                    <h5 class="custom-counter-title">Glasfaserkabel</h5>
                 </div>
             </div>
             <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                 <div class="counter-classic">
-                    <div class="counter-container">
-                        <span class="counter" data-count="8700">0</span>
+                    <div class="custom-counter-container">
+                        <span class="custom-counter" data-count="8700">0</span>
                     </div>
-                    <h5 class="counter-classic-title">Hausanschlüsse</h5>
+                    <h5 class="custom-counter-title">Hausanschlüsse</h5>
                 </div>
             </div>
             <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
                 <div class="counter-classic">
-                    <div class="counter-container">
-                        <span class="counter" data-count="26750">0</span><span class="unit">m</span>
+                    <div class="custom-counter-container">
+                        <span class="custom-counter" data-count="26750">0</span><span class="custom-unit">m</span>
                     </div>
-                    <h5 class="counter-classic-title">Kabelrohre</h5>
+                    <h5 class="custom-counter-title">Kabelrohre</h5>
                 </div>
             </div>
             <div class="col col-3 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
                 <div class="counter-classic">
-                    <div class="counter-container">
-                        <span class="counter" data-count="38400">0</span><span class="unit">m²</span>
+                    <div class="custom-counter-container">
+                        <span class="custom-counter" data-count="38400">0</span><span class="custom-unit">m²</span>
                     </div>
-                    <h5 class="counter-classic-title">Gehweg & Pflasterarbeiten</h5>
+                    <h5 class="custom-counter-title">Gehweg & Pflasterarbeiten</h5>
                 </div>
             </div>
         </div>
@@ -457,7 +485,10 @@
                 const elapsedTime = currentTime - startTime;
                 const progress = Math.min(elapsedTime / duration, 1);
                 const currentValue = Math.round(endValue * progress).toLocaleString('de-DE');
-                element.innerHTML = currentValue + unit;
+                element.innerHTML = currentValue; // Bir kez ekliyoruz
+                if (element.nextElementSibling) {
+                    element.nextElementSibling.innerHTML = unit.replace('<span class="custom-unit">', '').replace('</span>', '');
+                }
                 if (progress < 1) {
                     requestAnimationFrame(updateCounter);
                 }
@@ -466,8 +497,29 @@
             requestAnimationFrame(updateCounter);
         }
 
-        const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => animateCounter(counter));
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            const counters = document.querySelectorAll('.custom-counter');
+            counters.forEach(counter => {
+                if (isElementInViewport(counter) && !counter.classList.contains('counted')) {
+                    counter.classList.add('counted');
+                    animateCounter(counter);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll);
+        handleScroll(); // Sayfa yüklendiğinde bir kere kontrol ediyoruz
     });
 </script>
 
