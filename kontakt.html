@@ -28,6 +28,38 @@
         display: block;
       }
     </style>
+   <style>
+    /* Popup mesajları için stil */
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        display: none;
+    }
+
+    .popup.success {
+        border-color: #4CAF50;
+    }
+
+    .popup.error {
+        border-color: #F44336;
+    }
+
+    .popup button {
+        margin-top: 10px;
+        padding: 5px 10px;
+        background: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+</style>  
   </head>
   <body>
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -100,6 +132,10 @@
         </div>
       </header>
 
+
+
+
+
       <!-- Contact information-->
       <section class="section section-sm section-first bg-default">
         <div class="container">
@@ -144,48 +180,53 @@
         </div>
       </section>
 
-      <!-- Contact Form-->
-      <section class="section section-sm section-last bg-default text-left">
-        <div class="container">
-          <article class="title-classic">
-            <div class="title-classic-title">
-              <h3>KONTAKT</h3>
-            </div>
-            <div class="title-classic-text">
-              <p>Wenn Sie Fragen haben, füllen Sie einfach das Kontaktformular aus, und wir werden Ihnen in Kürze antworten.</p>
-            </div>
-          </article>
-          <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-            <div class="row row-14 gutters-14">
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-your-name-2">Ihr Name</label>
-                  <input class="form-input" id="contact-your-name-2" type="text" name="name" required>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-email-2">E-mail</label>
-                  <input class="form-input" id="contact-email-2" type="email" name="email" required>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-phone-2">Telefon</label>
-                  <input class="form-input" id="contact-phone-2" type="text" name="phone" required>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-message-2">Nachricht</label>
-                  <textarea class="form-input textarea-lg" id="contact-message-2" name="message" required></textarea>
-                </div>
-              </div>
-            </div>
-            <button class="button button-primary button-pipaluk" type="submit">Nachricht senden</button>
-          </form>
+<!-- Contact Form-->
+<section class="section section-sm section-last bg-default text-left">
+  <div class="container">
+    <article class="title-classic">
+      <div class="title-classic-title">
+        <h3>KONTAKT</h3>
+      </div>
+      <div class="title-classic-text">
+        <p>Wenn Sie Fragen haben, füllen Sie einfach das Kontaktformular aus, und wir werden Ihnen in Kürze antworten.</p>
+      </div>
+    </article>
+    <form class="rd-form rd-form-variant-2 rd-mailform" method="post" action="bat/contact-form-handler.php" onsubmit="submitForm(event)">
+      <div class="row row-14 gutters-14">
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <label class="form-label" for="contact-your-name-2">Ihr Name</label>
+            <input class="form-input" id="contact-your-name-2" type="text" name="name" required>
+          </div>
         </div>
-      </section>
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <label class="form-label" for="contact-email-2">E-mail</label>
+            <input class="form-input" id="contact-email-2" type="email" name="email" required>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-wrap">
+            <label class="form-label" for="contact-phone-2">Telefon</label>
+            <input class="form-input" id="contact-phone-2" type="text" name="phone" required>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-wrap">
+            <label class="form-label" for="contact-message-2">Nachricht</label>
+            <textarea class="form-input textarea-lg" id="contact-message-2" name="message" required></textarea>
+          </div>
+        </div>
+      </div>
+      <button class="button button-primary button-pipaluk" type="submit">Nachricht senden</button>
+    </form>
+  </div>
+</section>
+
+<!-- Popup Mesaj -->
+<div id="popup" class="popup"></div>
+
+
 
     <!-- Page Footer-->
     <footer class="section footer-corporate context-dark">
@@ -335,6 +376,40 @@
       });
     });
   </script>
+  <script>
+    function showPopup(message, isSuccess) {
+        var popup = document.getElementById("popup");
+        popup.innerHTML = message + '<br><button onclick="closePopup()">Tamam</button>';
+        popup.className = 'popup ' + (isSuccess ? 'success' : 'error');
+        popup.style.display = 'block';
+    }
+
+    function closePopup() {
+        var popup = document.getElementById("popup");
+        popup.style.display = 'none';
+    }
+
+    function submitForm(event) {
+        event.preventDefault(); // Formun normal şekilde gönderilmesini engeller
+        var form = event.target;
+        var formData = new FormData(form);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "contact-form-handler.php", true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                showPopup(response.message, response.status === "success");
+                if (response.status === "success") {
+                    form.reset(); // Formu temizler
+                }
+            } else {
+                showPopup("Bir hata oluştu. Lütfen tekrar deneyin.", false);
+            }
+        };
+        xhr.send(formData);
+    }
+</script>
 </body>
 
 </html>
